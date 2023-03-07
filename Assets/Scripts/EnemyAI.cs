@@ -91,6 +91,8 @@ public class EnemyAI : NetworkBehaviour
 
     private void ConeOfVision()
     {
+        // if within area of sector, is not downed and there is no obstacle in the way? 
+
         if ((targetInstance.isDowned == false) &&
            (Vector3.Angle(Vector3.forward, transform.InverseTransformPoint(targetInstance.transform.position)) < visionAngle) &&
            (Vector3.Distance(this.transform.position, targetInstance.transform.position) < targetRange) &&
