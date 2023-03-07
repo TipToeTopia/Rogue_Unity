@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6594718903552228341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6594718903552228343}
+  - component: {fileID: 6594718903552228340}
+  - component: {fileID: 6594718903552228342}
+  m_Layer: 0
+  m_Name: TileSurroundings
+  m_TagString: TileSurroundings
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6594718903552228343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594718903552228341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6594718903552228340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594718903552228341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8efc463da838e4987a17ed8444d270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topRooms:
+  - {fileID: 5986061569499453710, guid: 1141a737691105c428916a0c55586c05, type: 3}
+  - {fileID: 4131701624463678538, guid: dd1a16d1eea0cb343b609d588cfb0d28, type: 3}
+  - {fileID: 2474162527191688509, guid: 2fcd836bea84e244199d4c1a8d085db3, type: 3}
+  - {fileID: 4743141443029905069, guid: 9894e201f8ab2f341916cdf6d0d936d0, type: 3}
+  bottomRooms:
+  - {fileID: 2474162527191688509, guid: 2fcd836bea84e244199d4c1a8d085db3, type: 3}
+  - {fileID: -4896790437686927377, guid: 12f1fe640a5f96f4a83e1daa1f12d9e8, type: 3}
+  - {fileID: 4948342951841399151, guid: 4d23a776a88c403438a76811a20b02aa, type: 3}
+  rightRooms:
+  - {fileID: 6479440200859188177, guid: 22f4221dace99bb438b9059ac08e8a4f, type: 3}
+  - {fileID: 4948342951841399151, guid: 4d23a776a88c403438a76811a20b02aa, type: 3}
+  - {fileID: 4131701624463678538, guid: dd1a16d1eea0cb343b609d588cfb0d28, type: 3}
+  leftRooms:
+  - {fileID: 5986061569499453710, guid: 1141a737691105c428916a0c55586c05, type: 3}
+  - {fileID: 7873610762231109510, guid: 0ad77d54257a7ed41bcbf6e10e630f79, type: 3}
+  - {fileID: 4407674054236571510, guid: 40007548f584e1a48bbfebe316651a03, type: 3}
+  roomCount: []
+  closedRoom: {fileID: 6529570413062345652, guid: 7b7cd206bd86dfa4fbcf218385396fb8, type: 3}
+  stopSpawning: 0
+  waitTime: 1.5
+  keyObject: {fileID: -844449734958041115, guid: fbb0bd698dc41c34584c324be9786728, type: 3}
+  itemTwoObject: {fileID: 2342786846822744208, guid: 64b2d6d9382a19240abe90cec1180def, type: 3}
+  itemThreeObject: {fileID: 248228068928356019, guid: f099c67a82f657148a0b5d3b2fc669bc, type: 3}
+  doorObject: {fileID: 834752930762220433, guid: e933c54ca5d677b458c80e73c211a5da, type: 3}
+  enemyAI: {fileID: 1949883444141442962, guid: c8cafdb9d03628045a05513cfe771f3f, type: 3}
+--- !u!114 &6594718903552228342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594718903552228341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
