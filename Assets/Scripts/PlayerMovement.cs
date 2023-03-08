@@ -26,6 +26,7 @@ public class PlayerMovement : NetworkBehaviour
     private GameObject reviveCanvas;
 
     public bool isDowned = false;
+    public bool isInvisible = false;
 
     public override void OnNetworkSpawn()
     {

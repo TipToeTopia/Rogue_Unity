@@ -20,6 +20,10 @@ public class ItemTwo : ItemType
         if (TouchedPlayer(Collision) == true)
         {
             levelManager.SetItemTwoTextServerRpc(UpdatePlayerIdentification);
+
+            playerMovement = Collision.gameObject.GetComponent<PlayerMovement>();
+            playerMovement.isInvisible = true;
+
             DespawnObjectServerRpc();
         }
     }

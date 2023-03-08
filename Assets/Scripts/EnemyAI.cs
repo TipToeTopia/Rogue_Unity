@@ -93,7 +93,8 @@ public class EnemyAI : NetworkBehaviour
     {
         // if within area of sector, is not downed and there is no obstacle in the way? 
 
-        if ((targetInstance.isDowned == false) &&
+        if ((targetInstance.isDowned == false) && 
+           (targetInstance.isInvisible == false) &&
            (Vector3.Angle(Vector3.forward, transform.InverseTransformPoint(targetInstance.transform.position)) < visionAngle) &&
            (Vector3.Distance(this.transform.position, targetInstance.transform.position) < targetRange) &&
            (Physics.Linecast((transform.position + transform.up), (targetInstance.transform.position + transform.up), out Hit, AREA_MASK)) &&
