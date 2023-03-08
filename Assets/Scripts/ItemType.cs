@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+// inherited base class for item types
+
 public class ItemType : NetworkBehaviour
 {
-    // base class for item objects
 
     protected LevelManager levelManager;
     protected string UpdatePlayerIdentification;
