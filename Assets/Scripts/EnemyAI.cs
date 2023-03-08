@@ -156,6 +156,8 @@ public class EnemyAI : NetworkBehaviour
             
         }
 
+        // if not null 
+
         if (targetInstance && ClosestTarget)
         {
             targetInstance.transform.position = ClosestTarget.transform.position;
