@@ -19,16 +19,19 @@ public class DoorScript : ItemType
         {
             if (UpdatePlayerIdentification == levelManager.keyCollected.Value)
             {
-                if (levelManager.completedLevelOne.Value == false)
+                if (levelManager.PlayerDownedState(true) == false)
                 {
-                    levelManager.LevelTwoServerRpc();
-                }
-                else if (levelManager.completedLevelTwo.Value == false)
-                {
-                    levelManager.YouWinServerRpc();
-                }
+                    if (levelManager.completedLevelOne.Value == false)
+                    {
+                        levelManager.LevelTwoServerRpc();
+                    }
+                    else if (levelManager.completedLevelTwo.Value == false)
+                    {
+                        levelManager.YouWinServerRpc();
+                    }
 
-                DespawnObjectServerRpc();
+                    DespawnObjectServerRpc();
+                } 
             }
         }
     }
@@ -38,6 +41,7 @@ public class DoorScript : ItemType
     {
         levelManager.completedLevelOne.OnValueChanged -= levelManager.LevelTwo;
         levelManager.completedLevelTwo.OnValueChanged -= levelManager.YouWin;
+
         base.DespawnObjectServerRpc();
     }
 

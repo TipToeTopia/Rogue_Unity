@@ -14,7 +14,7 @@ public class NetworkMenu : NetworkBehaviour
     private Button clientButton;
 
     [SerializeField]
-    private GameObject Buttons;
+    private Canvas Buttons;
 
     private void Awake()
     {
@@ -32,14 +32,14 @@ public class NetworkMenu : NetworkBehaviour
     private void HostButton()
     {
         NetworkManager.Singleton.StartHost();
-        Buttons.SetActive(false);
+        Buttons.enabled = false;
 
     }
 
     private void ClientButton()
     {
         NetworkManager.Singleton.StartClient();
-        Buttons.SetActive(false);
+        Buttons.enabled = false;
 
     } 
 }

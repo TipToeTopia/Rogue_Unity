@@ -15,6 +15,8 @@ public class PlayerMovement : NetworkBehaviour
     private const string HORIZONTAL_AXIS = "Horizontal";
     private const string VERTICAL_AXIS = "Vertical";
 
+    private const float CONSTANT_Y_AXIS = 1.0f;
+
     private Vector3 spawnOffset = new Vector3(2.0f, 0.0f, 0.0f);
 
     [SerializeField]
@@ -28,6 +30,8 @@ public class PlayerMovement : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         LevelManager.Instance.PlayersInGame.Add(this);
+
+        this.transform.position = new Vector3(transform.position.x, CONSTANT_Y_AXIS, transform.position.z);
     }
 
     public override void OnNetworkDespawn()

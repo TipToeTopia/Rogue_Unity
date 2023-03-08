@@ -5,6 +5,8 @@ using Unity.Netcode;
 
 public class ItemTwo : ItemType
 {
+    // item two will be to move objects
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();

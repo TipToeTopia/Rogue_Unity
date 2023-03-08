@@ -116,15 +116,40 @@ public class LevelManager : NetworkBehaviour
     {
         // return if any player is found that is not downed
 
-        foreach (PlayerMovement Player in PlayersInGame)
+        if (PlayerDownedState(false) == true)
         {
-            if (Player.isDowned == false)
+            AllPlayersDeadServerRpc();
+        }
+    }
+
+    // we can use this function to check for player downed states in the network
+    public bool PlayerDownedState(bool AreSomeDowned)
+    {
+        for (int I = 0; I < PlayersInGame.Count; I++)
+        {
+            // if isDowned = false, check if all downed, else check if we find more then zero downed
+
+            if (PlayersInGame[I].isDowned == AreSomeDowned)
             {
-                return;
+                if (AreSomeDowned == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
-        AllPlayersDeadServerRpc();
+        if (AreSomeDowned == true)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void YouLose(bool PreviousValue, bool NewValue)
