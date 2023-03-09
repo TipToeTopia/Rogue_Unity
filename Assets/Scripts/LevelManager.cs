@@ -165,18 +165,40 @@ public class LevelManager : NetworkBehaviour
 
     public void LevelTwo(bool PreviousValue, bool NewValue)
     {
-        // teleport players
+        // teleport players and reset players
 
+        DisableInventoryUI();
+        
         foreach (PlayerMovement Player in PlayersInGame)
         {
+
            Player.transform.position = new Vector3(originPosition.x, Player.transform.position.y, originPosition.z);
+
+           Player.isInvisible = false;
+           Player.isDowned = false;
+
         }
 
         DestroyWorldServerRpc();
-        StartCoroutine(Delay());
+        StartCoroutine(SpawnNewMapDelay());
     }
 
-    IEnumerator Delay()
+    private void DisableInventoryUI()
+    {
+        keyImage.enabled = false;
+        itemThreeImage.enabled = false;
+        itemTwoImage.enabled = false;
+
+        keyCollected = new NetworkVariable<FixedString64Bytes>();
+        itemTwoCollected = new NetworkVariable<FixedString64Bytes>();
+        itemThreeCollected = new NetworkVariable<FixedString64Bytes>();
+
+        itemThreeText.text = "";
+        itemTwoText.text = "";
+        keyText.text = "";
+    }
+
+    IEnumerator SpawnNewMapDelay()
     {
         yield return new WaitForSeconds(DELAY);
         SpawnLevelTwoServerRpc();
