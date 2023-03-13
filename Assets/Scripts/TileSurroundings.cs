@@ -52,6 +52,8 @@ public class TileSurroundings : NetworkBehaviour
     private const int FOURTH_TO_LAST_INDEX = 4;
     private const int FIFTH_TO_LAST_INDEX = 5;
 
+
+
     void Update()
     {
         if (IsHost)
@@ -60,8 +62,10 @@ public class TileSurroundings : NetworkBehaviour
 
             if (LevelManager.Instance.stopTimer + waitTime <= ZERO)
             {
+
                 for (int I = 0; I < roomCount.Count; I++)
                 {
+
                     if (I == roomCount.Count - LAST_INDEX)
                     {
                         if (!spawnedKey)
@@ -178,4 +182,58 @@ public class TileSurroundings : NetworkBehaviour
         NetworkObject ObjectInstance = Instantiate(SpawnObject, SpawnPosition + spawnObjectOffset, Quaternion.identity);
         ObjectInstance.Spawn();
     }
+
+    /*
+     *  if (I == roomCount.Count - LAST_INDEX)
+                    {
+                        if (!spawnedKey)
+                        {
+                            spawnKey = roomCount[I - LAST_INDEX].transform.position;
+                            SpawnKeyServerRpc();
+                            spawnedKey = true;
+                        }
+                    }
+
+                    if (I == roomCount.Count - SECOND_TO_LAST_INDEX)
+                    {
+                        if (!spawnedItemTwo)
+                        {
+                            spawnItemTwo = roomCount[I - SECOND_TO_LAST_INDEX].transform.position;
+                            SpawnItemTwoServerRpc();
+                            spawnedItemTwo = true;
+                        }
+                    }
+
+                    if (I == roomCount.Count - THIRD_TO_LAST_INDEX)
+                    {
+                        if (!spawnedItemThree)
+                        {
+                            spawnItemThree = roomCount[I -  THIRD_TO_LAST_INDEX].transform.position;
+                            SpawnItemThreeServerRpc();
+                            spawnedItemThree = true;
+                        }
+                    }
+
+                    if (I == roomCount.Count - FOURTH_TO_LAST_INDEX)
+                    {
+                        if (!spawnedDoor)
+                        {
+                            spawnDoor = roomCount[I -  FOURTH_TO_LAST_INDEX].transform.position;
+                            SpawnDoorServerRpc();
+                            spawnedDoor = true;
+                        }
+                    }
+
+                    if (I == roomCount.Count - FIFTH_TO_LAST_INDEX)
+                    {
+                        if (!spawnedAI)
+                        {
+                            spawnAI = roomCount[I - FIFTH_TO_LAST_INDEX].transform.position;
+                            SpawnAIServerRpc();
+                            spawnedAI = true;
+                        }
+                    }
+     
+     */
+
 }

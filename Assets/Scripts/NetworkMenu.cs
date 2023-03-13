@@ -38,6 +38,7 @@ public class NetworkMenu : NetworkBehaviour
 
     private void ClientButton()
     {
+
         NetworkManager.Singleton.StartClient();
         Buttons.enabled = false;
 

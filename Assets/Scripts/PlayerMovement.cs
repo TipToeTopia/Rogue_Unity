@@ -46,12 +46,7 @@ public class PlayerMovement : NetworkBehaviour
 
     void Update()
     {
-        if (!IsOwner)
-        {
-            return;
-        }
-
-        if (isDowned == true)
+        if (!IsOwner || isDowned == true)
         {
             return;
         }
@@ -65,21 +60,6 @@ public class PlayerMovement : NetworkBehaviour
         MovementDirection.Normalize();
 
         transform.Translate(MovementDirection * movementSpeed * Time.deltaTime, Space.World);
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SpawnKeyServerRpc();
-
-        }
-    }
-
-    [ServerRpc]
-    void SpawnKeyServerRpc()
-    {
-
-        NetworkObject KeyObject = Instantiate(keyObject, transform.position + spawnOffset, Quaternion.identity);
-        KeyObject.Spawn();
-
     }
 
     [ClientRpc]

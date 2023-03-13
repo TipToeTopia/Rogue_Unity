@@ -871,7 +871,7 @@ ScriptsOnlyBuild:
     className: NetworkRigidbody
   - hash:
       serializedVersion: 2
-      Hash: b6aa6dc5cec63889539c8ff838266f33
+      Hash: 840a69e6c2ac1ef2cb3f4bff8ab2fb2f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement

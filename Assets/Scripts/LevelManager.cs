@@ -36,6 +36,7 @@ public class LevelManager : NetworkBehaviour
 
     private const float DELAY = 0.5f;
 
+    [HideInInspector]
     public List<PlayerMovement> PlayersInGame;
 
     [HideInInspector]
