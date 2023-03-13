@@ -9,7 +9,9 @@ using System;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    private const float MOVEMENT_SPEED = 10.0f;
+    [HideInInspector]
+    public float movementSpeed;
+
     private const float Y_AXIS_MOVEMENT = 0.0f;
 
     private const string HORIZONTAL_AXIS = "Horizontal";
@@ -30,6 +32,8 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        movementSpeed = LevelManager.DEFAULT_PLAYER_SPEED;
+
         LevelManager.Instance.PlayersInGame.Add(this);
 
         this.transform.position = new Vector3(transform.position.x, CONSTANT_Y_AXIS, transform.position.z);
@@ -60,7 +64,7 @@ public class PlayerMovement : NetworkBehaviour
         Vector3 MovementDirection = new Vector3(HorizontalInput, Y_AXIS_MOVEMENT, VerticalInput);
         MovementDirection.Normalize();
 
-        transform.Translate(MovementDirection * MOVEMENT_SPEED * Time.deltaTime, Space.World);
+        transform.Translate(MovementDirection * movementSpeed * Time.deltaTime, Space.World);
 
         if (Input.GetKeyDown(KeyCode.E))
         {

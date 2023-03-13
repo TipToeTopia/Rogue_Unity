@@ -5,6 +5,8 @@ using Unity.Netcode;
 
 public class ItemThree : ItemType
 {
+    private const float newPlayerSpeed = 10.0f;
+
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
@@ -17,6 +19,10 @@ public class ItemThree : ItemType
         if (TouchedPlayer(Collision) == true)
         {
             levelManager.SetItemThreeTextServerRpc(UpdatePlayerIdentification);
+
+            playerMovement = Collision.gameObject.GetComponent<PlayerMovement>();
+            playerMovement.movementSpeed = newPlayerSpeed;
+
             DespawnObjectServerRpc();
         }
     }

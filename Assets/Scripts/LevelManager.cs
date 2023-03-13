@@ -84,6 +84,9 @@ public class LevelManager : NetworkBehaviour
     private const float LEVEL_TWO_ENEMY_SPEED = 5.0f;
     private const float LEVEL_TWO_ENEMY_TARGET_RANGE = 15.0f;
 
+    [HideInInspector]
+    public const float DEFAULT_PLAYER_SPEED = 5.0f;
+
     private static LevelManager instance = null;
 
     public static LevelManager Instance
@@ -176,6 +179,8 @@ public class LevelManager : NetworkBehaviour
 
            Player.isInvisible = false;
            Player.isDowned = false;
+
+           Player.movementSpeed = DEFAULT_PLAYER_SPEED;
 
         }
 
