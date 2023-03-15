@@ -110,16 +110,6 @@ public class EnemyAI : NetworkBehaviour
         }
     }
 
-    // obtain random point around AI origin
-
-    public Vector3 RandomPoint()
-    {
-        Vector3 RandomPoint = (Random.onUnitSphere * patrolRange) + this.transform.position;
-        NavMeshHit Hit;
-        NavMesh.SamplePosition(RandomPoint, out Hit, patrolRange, AREA_MASK);
-        return new Vector3(Hit.position.x, this.transform.position.y, Hit.position.z);
-    }
-
     // find the closest player to set as target
 
     IEnumerator FindClosestTarget()
@@ -154,7 +144,7 @@ public class EnemyAI : NetworkBehaviour
                     }
                 }
             }
-            
+
         }
 
         // if not null 
@@ -163,6 +153,16 @@ public class EnemyAI : NetworkBehaviour
         {
             targetInstance.transform.position = ClosestTarget.transform.position;
         }
+    }
+
+    // obtain random point around AI origin
+
+    public Vector3 RandomPoint()
+    {
+        Vector3 RandomPoint = (Random.onUnitSphere * patrolRange) + this.transform.position;
+        NavMeshHit Hit;
+        NavMesh.SamplePosition(RandomPoint, out Hit, patrolRange, AREA_MASK);
+        return new Vector3(Hit.position.x, this.transform.position.y, Hit.position.z);
     }
 
     private void RandomPatrol()

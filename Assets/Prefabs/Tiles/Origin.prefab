@@ -114,8 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c4b93f5cfd17641b9f564ad8e4f41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionToSpawn: 3
+  tileSurroundings: {fileID: 0}
   hasSpawned: 0
+  spawnDirection: 0
 --- !u!54 &3133106461314752316
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -253,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 56e570b1281747d4395112a57cd53065, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -418,8 +419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c4b93f5cfd17641b9f564ad8e4f41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionToSpawn: 4
+  tileSurroundings: {fileID: 0}
   hasSpawned: 0
+  spawnDirection: 0
 --- !u!54 &3133106461444924381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -604,8 +606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c4b93f5cfd17641b9f564ad8e4f41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionToSpawn: 1
+  tileSurroundings: {fileID: 0}
   hasSpawned: 0
+  spawnDirection: 0
 --- !u!54 &3133106461510995717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -790,8 +793,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c4b93f5cfd17641b9f564ad8e4f41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionToSpawn: 2
+  tileSurroundings: {fileID: 0}
   hasSpawned: 0
+  spawnDirection: 0
 --- !u!54 &3133106463199400359
 Rigidbody:
   m_ObjectHideFlags: 0
